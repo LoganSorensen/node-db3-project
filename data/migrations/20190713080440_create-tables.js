@@ -9,11 +9,14 @@ exports.up = function(knex) {
     })
     .createTable('steps', tbl => {
       tbl.increments();
+
       tbl.integer('step_number')
         .unsigned()
         .notNullable();
+
       tbl.text('instructions')
         .notNullable();
+        
       tbl.integer('scheme_id')
         .unsigned()
         .notNullable()
